@@ -21,6 +21,7 @@ Patch0:		%{name}-opt.patch
 URL:		http://cmp.felk.cvut.cz/~pisa/dmsdos/
 %{!?_without_dist_kernel:BuildRequires:         kernel-headers >= 2.2.0 }
 BuildRequires:	%{kgcc_package}
+BuildRequires:	rpmbuild(macros) >= 1.118
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -114,16 +115,16 @@ rm -rf $RPM_BUILD_ROOT
 %postun	-p /sbin/ldconfig
 
 %post	-n kernel-fs-dmsdos
-/sbin/depmod -a %{!?_without_dist_kernel:-F /boot/System.map-%{_kernel_ver} }%{_kernel_ver}
+%depmod %{_kernel_ver}
 
 %postun	-n kernel-fs-dmsdos
-/sbin/depmod -a %{!?_without_dist_kernel:-F /boot/System.map-%{_kernel_ver} }%{_kernel_ver}
+%depmod %{_kernel_ver}
 
 %post	-n kernel-smp-fs-dmsdos
-/sbin/depmod -a %{!?_without_dist_kernel:-F /boot/System.map-%{_kernel_ver}smp }%{_kernel_ver}smp
+%depmod %{_kernel_ver}smp
 
 %postun	-n kernel-smp-fs-dmsdos
-/sbin/depmod -a %{!?_without_dist_kernel:-F /boot/System.map-%{_kernel_ver}smp }%{_kernel_ver}smp
+%depmod %{_kernel_ver}smp
 
 %files
 %defattr(644,root,root,755)
