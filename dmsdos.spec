@@ -105,8 +105,6 @@ install cvf*.1 dmsdosd.1 dutil.1 $RPM_BUILD_ROOT%{_mandir}/man1
 install mcdmsdos.1 $RPM_BUILD_ROOT%{_mandir}/man1
 
 cd ..
-# note: COPYING file contains only some details, not actual GPL text
-gzip -9nf BUGS COPYING NEWS README doc/*
 
 %clean 
 rm -rf $RPM_BUILD_ROOT
@@ -128,7 +126,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz doc/*.gz
+%doc BUGS COPYING NEWS README doc/*
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_sbindir}/*
 %attr(755,root,root) %{_libdir}/libdmsdos.so.*.*
