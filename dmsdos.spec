@@ -14,9 +14,9 @@ Release:	%{_rel}
 License:	GPL/LGPL
 Group:		Base/Kernel
 URL:		http://cmp.felk.cvut.cz/~pisa/dmsdos/
-Source0: 	http://cmp.felk.cvut.cz/~pisa/dmsdos/sources/dmsdos-0.9.2.2.tar.gz
-Source1:	dmsdos.config
-Source2:	dmsdos-config.h
+Source0:	http://cmp.felk.cvut.cz/~pisa/dmsdos/sources/%{name}-%{version}.tar.gz
+Source1:	%{name}.config
+Source2:	%{name}-config.h
 Patch0:		%{name}-opt.patch
 %{!?_without_dist_kernel:BuildRequires:         kernel-headers >= 2.2.0 }
 BuildRequires:	%{kgcc_package}
@@ -106,7 +106,7 @@ install mcdmsdos.1 $RPM_BUILD_ROOT%{_mandir}/man1
 
 cd ..
 
-%clean 
+%clean
 rm -rf $RPM_BUILD_ROOT
 
 %post	-p /sbin/ldconfig
