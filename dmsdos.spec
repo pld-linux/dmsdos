@@ -1,7 +1,7 @@
-
-# conditional build
+#
+# Conditional build:
 # _without_dist_kernel          without distribution kernel
-
+#
 # TODO: proper UP/SMP modules build
 
 %define		_rel 1
@@ -13,11 +13,11 @@ Version:	0.9.2.2
 Release:	%{_rel}
 License:	GPL/LGPL
 Group:		Base/Kernel
-URL:		http://cmp.felk.cvut.cz/~pisa/dmsdos/
 Source0:	http://cmp.felk.cvut.cz/~pisa/dmsdos/sources/%{name}-%{version}.tar.gz
 Source1:	%{name}.config
 Source2:	%{name}-config.h
 Patch0:		%{name}-opt.patch
+URL:		http://cmp.felk.cvut.cz/~pisa/dmsdos/
 %{!?_without_dist_kernel:BuildRequires:         kernel-headers >= 2.2.0 }
 BuildRequires:	%{kgcc_package}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -36,8 +36,8 @@ Summary(pl):	Obs³uga skompresowanych systemów plików FAT dla Linuksa
 Release:	%{_rel}@%{_kernel_ver_str}
 License:	GPL
 Group:		Base/Kernel
-PreReq:		/sbin/depmod
 %{!?_without_dist_kernel:%requires_releq_kernel_up}
+Requires(post,postun):	/sbin/depmod
 
 %description -n kernel-fs-dmsdos
 Linux support for compressed FAT volumes (Stacker, DoubleSpace,
@@ -53,8 +53,8 @@ Summary(pl):	Obs³uga skompresowanych systemów plików FAT dla Linuksa SMP
 Release:	%{_rel}@%{_kernel_ver_str}
 License:	GPL
 Group:		Base/Kernel
-PreReq:		/sbin/depmod
 %{!?_without_dist_kernel:%requires_releq_kernel_smp}
+Requires(post,postun):	/sbin/depmod
 
 %description -n kernel-smp-fs-dmsdos
 Linux SMP support for compressed FAT volumes (Stacker, DoubleSpace,
@@ -113,16 +113,16 @@ rm -rf $RPM_BUILD_ROOT
 %postun	-p /sbin/ldconfig
 
 %post	-n kernel-fs-dmsdos
-/sbin/depmod -a
+/sbin/depmod -a -F /boot/System.map-%{_kernel_ver} %{_kernel_ver}
 
 %postun	-n kernel-fs-dmsdos
-/sbin/depmod -a
+/sbin/depmod -a -F /boot/System.map-%{_kernel_ver} %{_kernel_ver}
 
 %post	-n kernel-smp-fs-dmsdos
-/sbin/depmod -a
+/sbin/depmod -a -F /boot/System.map-%{_kernel_ver}smp %{_kernel_ver}smp
 
 %postun	-n kernel-smp-fs-dmsdos
-/sbin/depmod -a
+/sbin/depmod -a -F /boot/System.map-%{_kernel_ver}smp %{_kernel_ver}smp
 
 %files
 %defattr(644,root,root,755)
