@@ -126,6 +126,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+# note: COPYING file contains only some details, not actual GPL text
 %doc BUGS COPYING NEWS README doc/*
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_sbindir}/*
