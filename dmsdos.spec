@@ -14,6 +14,7 @@ Release:	%{_rel}
 License:	GPL/LGPL
 Group:		Base/Kernel
 Source0:	http://cmp.felk.cvut.cz/~pisa/dmsdos/sources/%{name}-%{version}.tar.gz
+# Source0-md5:	51e0011eb5509f8e3d7f168f7ec26ece
 Source1:	%{name}.config
 Source2:	%{name}-config.h
 Patch0:		%{name}-opt.patch
