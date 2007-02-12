@@ -7,7 +7,7 @@
 %define		_rel 1
 
 Summary:	Support for FAT compressed volumes
-Summary(pl.UTF-8):   Obsługa skompresowanych systemów plików FAT
+Summary(pl.UTF-8):	Obsługa skompresowanych systemów plików FAT
 Name:		dmsdos
 Version:	0.9.2.2
 Release:	%{_rel}
@@ -34,7 +34,7 @@ DriveSpace). Ten pakiet zawiera narzędzia typu dmsdosfsck.
 
 %package -n kernel-fs-dmsdos
 Summary:	Linux support for compressed FAT volumes
-Summary(pl.UTF-8):   Obsługa skompresowanych systemów plików FAT dla Linuksa
+Summary(pl.UTF-8):	Obsługa skompresowanych systemów plików FAT dla Linuksa
 Release:	%{_rel}@%{_kernel_ver_str}
 License:	GPL
 Group:		Base/Kernel
@@ -51,7 +51,7 @@ DriveSpace) dla Linuksa.
 
 %package -n kernel-smp-fs-dmsdos
 Summary:	Linux SMP support for compressed FAT volumes
-Summary(pl.UTF-8):   Obsługa skompresowanych systemów plików FAT dla Linuksa SMP
+Summary(pl.UTF-8):	Obsługa skompresowanych systemów plików FAT dla Linuksa SMP
 Release:	%{_rel}@%{_kernel_ver_str}
 License:	GPL
 Group:		Base/Kernel
