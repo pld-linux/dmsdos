@@ -7,7 +7,7 @@
 %define		_rel 1
 
 Summary:	Support for FAT compressed volumes
-Summary(pl):	Obs硊ga skompresowanych system體 plik體 FAT
+Summary(pl.UTF-8):   Obs艂uga skompresowanych system贸w plik贸w FAT
 Name:		dmsdos
 Version:	0.9.2.2
 Release:	%{_rel}
@@ -28,13 +28,13 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Support for FAT compressed volumes (Stacker, DoubleSpace, DriveSpace).
 This package contains some utilities like dmsdosfsck.
 
-%description -l pl
-Obs硊ga skompresowanych system體 plik體 FAT (Stacker, DoubleSpace,
-DriveSpace). Ten pakiet zawiera narz阣zia typu dmsdosfsck.
+%description -l pl.UTF-8
+Obs艂uga skompresowanych system贸w plik贸w FAT (Stacker, DoubleSpace,
+DriveSpace). Ten pakiet zawiera narz臋dzia typu dmsdosfsck.
 
 %package -n kernel-fs-dmsdos
 Summary:	Linux support for compressed FAT volumes
-Summary(pl):	Obs硊ga skompresowanych system體 plik體 FAT dla Linuksa
+Summary(pl.UTF-8):   Obs艂uga skompresowanych system贸w plik贸w FAT dla Linuksa
 Release:	%{_rel}@%{_kernel_ver_str}
 License:	GPL
 Group:		Base/Kernel
@@ -45,13 +45,13 @@ Requires(post,postun):	/sbin/depmod
 Linux support for compressed FAT volumes (Stacker, DoubleSpace,
 DriveSpace).
 
-%description -n kernel-fs-dmsdos -l pl
-Obs硊ga skompresowanych system體 plik體 FAT (Stacker, DoubleSpace,
+%description -n kernel-fs-dmsdos -l pl.UTF-8
+Obs艂uga skompresowanych system贸w plik贸w FAT (Stacker, DoubleSpace,
 DriveSpace) dla Linuksa.
 
 %package -n kernel-smp-fs-dmsdos
 Summary:	Linux SMP support for compressed FAT volumes
-Summary(pl):	Obs硊ga skompresowanych system體 plik體 FAT dla Linuksa SMP
+Summary(pl.UTF-8):   Obs艂uga skompresowanych system贸w plik贸w FAT dla Linuksa SMP
 Release:	%{_rel}@%{_kernel_ver_str}
 License:	GPL
 Group:		Base/Kernel
@@ -62,8 +62,8 @@ Requires(post,postun):	/sbin/depmod
 Linux SMP support for compressed FAT volumes (Stacker, DoubleSpace,
 DriveSpace).
 
-%description -n kernel-smp-fs-dmsdos -l pl
-Obs硊ga skompresowanych system體 plik體 FAT (Stacker, DoubleSpace,
+%description -n kernel-smp-fs-dmsdos -l pl.UTF-8
+Obs艂uga skompresowanych system贸w plik贸w FAT (Stacker, DoubleSpace,
 DriveSpace) dla Linuksa SMP.
 
 %prep
