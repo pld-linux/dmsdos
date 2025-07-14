@@ -68,7 +68,7 @@ DriveSpace) dla Linuksa SMP.
 
 %prep
 %setup -q
-%patch0 -p1
+%patch -P0 -p1
 
 %build
 cp -f %{SOURCE1} src/.config
